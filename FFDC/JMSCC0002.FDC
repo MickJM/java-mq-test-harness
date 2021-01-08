@@ -1,0 +1,437 @@
+----------------------------------START FFST------------------------------------
+C:\Users\mickm\eclipse-workspace\java-mq-test-harness\FFDC\JMSCC0002.FDC PID:16968
+
+                                    IBM MQ classes for JMS and Java (AllClient packaging) First Failure Symptom Report
+                                            
+
+Product          :- IBM MQ classes for JMS and Java (AllClient packaging)
+Date/Time        :- Wed Aug 19 12:15:54 BST 2020
+System time      :- 1597835754280
+Operating System :- Windows 10
+UserID           :- mickm
+Java Vendor      :- "Oracle Corporation"
+Java Version     :- 10.0.1+10
+
+Source Class     :- com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl
+Source Method    :- processExceptionAfterOpen
+ProbeID          :- MP005001
+Thread           :- name=pool-1-thread-1 priority=5 group=main ccl=jdk.internal.loader.ClassLoaders$AppClassLoader@474c17c8
+
+                                      Data
+                                      ----
+
+|   Queue manager Uid   :-  QMAP01_2018-11-18_17.34.30                      
+|   Queue manager name  :-  QMAP01                                          
+|   exception           :-  ExceptionDepth is 3
+|   exception           :-  
+|   |   Cause:1       :-  An error occurred when trying to retrieve the recipient certificates.
+|   |   An error occurred when trying to retrieve the recipient certificates.
+|   |   Look at subsequent messages for details on actions to perform to fix this problem.
+|   |   Cause:2       :-  Failed to get the certificates for these recipients: 'CN=mqmon01,O=Maersk,CN=GB;'
+|   |   An error occurred when retrieving certificates for recipients.
+|   |   Verify that the certificates for these recipients are in the local keystore or in the user registry.
+|   |   Message:1     :-  An error occurred when trying to retrieve the recipient certificates.
+|   |   Message:2     :-  Failed to get the certificates for these recipients: 'CN=mqmon01,O=Maersk,CN=GB;'
+|   |   StackTrace:1  :-  An error occurred when trying to retrieve the recipient certificates.
+|   |   An error occurred when trying to retrieve the recipient certificates.
+|   |   Look at subsequent messages for details on actions to perform to fix this problem.
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.initCrypto(JmqiOpenInterceptorImpl.java:793)
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.determinePolicy(JmqiOpenInterceptorImpl.java:721)
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.afterOpen(JmqiOpenInterceptorImpl.java:608)
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.afterSpiOpen(JmqiOpenInterceptorImpl.java:214)
+|   |   	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.spiOpen(InterceptedJmqiImpl.java:562)
+|   |   	at com.ibm.mq.ese.jmqi.ESEJMQI.spiOpen(ESEJMQI.java:849)
+|   |   	at com.ibm.mq.MQDestination.open(MQDestination.java:311)
+|   |   	at com.ibm.mq.MQQueue.<init>(MQQueue.java:240)
+|   |   	at com.ibm.mq.MQQueue.<init>(MQQueue.java:207)
+|   |   	at com.ibm.mq.MQQueueManager.accessQueue(MQQueueManager.java:3347)
+|   |   	at com.ibm.mq.MQQueueManager.accessQueue(MQQueueManager.java:3394)
+|   |   	at maersk.mq.testharness.mqcontroller.MQController.OpenQueue(MQController.java:246)
+|   |   	at maersk.mq.testharness.producer.Producer.OpenQueueForWriting(Producer.java:537)
+|   |   	at maersk.mq.testharness.producer.Producer.producer(Producer.java:418)
+|   |   	at maersk.mq.testharness.producer.Producer.Process(Producer.java:404)
+|   |   	at maersk.mq.testharness.producer.Producer.Start(Producer.java:354)
+|   |   	at maersk.mq.testharness.MessageProcessor.processMessages(MessageProcessor.java:392)
+|   |   	at maersk.mq.testharness.MessageProcessor.call(MessageProcessor.java:319)
+|   |   	at maersk.mq.testharness.MessageProcessor.call(MessageProcessor.java:1)
+|   |   	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+|   |   	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+|   |   	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+|   |   	at java.base/java.lang.Thread.run(Unknown Source)
+|   |   Caused by: Failed to get the certificates for these recipients: 'CN=mqmon01,O=Maersk,CN=GB;'
+|   |   An error occurred when retrieving certificates for recipients.
+|   |   Verify that the certificates for these recipients are in the local keystore or in the user registry.
+|   |   	at com.ibm.mq.ese.pki.AbstractKeyStoreAccess.doGetCertificates(AbstractKeyStoreAccess.java:616)
+|   |   	at com.ibm.mq.ese.pki.AbstractKeyStoreAccess.getCertificates(AbstractKeyStoreAccess.java:561)
+|   |   	at com.ibm.mq.ese.pki.CertAccessImpl.loadCertificates(CertAccessImpl.java:117)
+|   |   	at com.ibm.mq.ese.pki.CertAccessWrapper.loadCertificates(CertAccessWrapper.java:62)
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.initCrypto(JmqiOpenInterceptorImpl.java:784)
+|   |   	... 22 more
+|   |   
+|   |   StackTrace:2  :-  Failed to get the certificates for these recipients: 'CN=mqmon01,O=Maersk,CN=GB;'
+|   |   An error occurred when retrieving certificates for recipients.
+|   |   Verify that the certificates for these recipients are in the local keystore or in the user registry.
+|   |   	at com.ibm.mq.ese.pki.AbstractKeyStoreAccess.doGetCertificates(AbstractKeyStoreAccess.java:616)
+|   |   	at com.ibm.mq.ese.pki.AbstractKeyStoreAccess.getCertificates(AbstractKeyStoreAccess.java:561)
+|   |   	at com.ibm.mq.ese.pki.CertAccessImpl.loadCertificates(CertAccessImpl.java:117)
+|   |   	at com.ibm.mq.ese.pki.CertAccessWrapper.loadCertificates(CertAccessWrapper.java:62)
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.initCrypto(JmqiOpenInterceptorImpl.java:784)
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.determinePolicy(JmqiOpenInterceptorImpl.java:721)
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.afterOpen(JmqiOpenInterceptorImpl.java:608)
+|   |   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.afterSpiOpen(JmqiOpenInterceptorImpl.java:214)
+|   |   	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.spiOpen(InterceptedJmqiImpl.java:562)
+|   |   	at com.ibm.mq.ese.jmqi.ESEJMQI.spiOpen(ESEJMQI.java:849)
+|   |   	at com.ibm.mq.MQDestination.open(MQDestination.java:311)
+|   |   	at com.ibm.mq.MQQueue.<init>(MQQueue.java:240)
+|   |   	at com.ibm.mq.MQQueue.<init>(MQQueue.java:207)
+|   |   	at com.ibm.mq.MQQueueManager.accessQueue(MQQueueManager.java:3347)
+|   |   	at com.ibm.mq.MQQueueManager.accessQueue(MQQueueManager.java:3394)
+|   |   	at maersk.mq.testharness.mqcontroller.MQController.OpenQueue(MQController.java:246)
+|   |   	at maersk.mq.testharness.producer.Producer.OpenQueueForWriting(Producer.java:537)
+|   |   	at maersk.mq.testharness.producer.Producer.producer(Producer.java:418)
+|   |   	at maersk.mq.testharness.producer.Producer.Process(Producer.java:404)
+|   |   	at maersk.mq.testharness.producer.Producer.Start(Producer.java:354)
+|   |   	at maersk.mq.testharness.MessageProcessor.processMessages(MessageProcessor.java:392)
+|   |   	at maersk.mq.testharness.MessageProcessor.call(MessageProcessor.java:319)
+|   |   	at maersk.mq.testharness.MessageProcessor.call(MessageProcessor.java:1)
+|   |   	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+|   |   	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+|   |   	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+|   |   	at java.base/java.lang.Thread.run(Unknown Source)
+|   |   
+
+                              Version information
+                              -------------------
+
+IBM MQ JMS Provider
+9.1.5.0
+p915-L200318.DE
+Production
+Component Title: IBM MQ JMS Provider
+Component Name:  com.ibm.msg.client.wmq
+Version:         9.1.5.0
+Class Name:      class com.ibm.msg.client.wmq.factories.WMQComponent
+CMVC:            p915-L200318.DE
+mqjbnd level:    p915-L200318.DE
+Jar location:    file:/C:/Program Files/IBM/MQ/java/lib/com.ibm.mq.allclient.jar
+Factory Class:   class com.ibm.msg.client.wmq.factories.WMQFactoryFactory
+
+Common Services for Java Platform, Standard Edition
+9.1.5.0
+p915-L200318.DE
+Production
+inPreferenceTo[0]: com.ibm.msg.client.commonservices.j2me
+Component Title:   Common Services for Java Platform, Standard Edition
+Component Name:    com.ibm.msg.client.commonservices.j2se
+Version:           9.1.5.0
+Class Name:        class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+CMVC:              p915-L200318.DE
+Jar location:      file:/C:/Program Files/IBM/MQ/java/lib/com.ibm.mq.allclient.jar
+Factory Class:     class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+
+Java Message Service Client
+9.1.5.0
+p915-L200318.DE
+Production
+Component Title: Java Message Service Client
+Component Name:  com.ibm.msg.client.jms
+Version:         9.1.5.0
+Class Name:      class com.ibm.msg.client.jms.internal.JMSComponent
+CMVC:            p915-L200318.DE
+Jar location:    file:/C:/Program Files/IBM/MQ/java/lib/com.ibm.mq.allclient.jar
+Factory Class:   null
+
+IBM MQ classes for Java Message Service
+9.1.5.0
+p915-L200318.DE
+Production
+Component Title: IBM MQ classes for Java Message Service
+Component Name:  com.ibm.mq.jms
+Version:         9.1.5.0
+BuiltWith:       IBM Corporation  8.0.5.7 - pwa6480sr5fp7-20171216_01(SR5 FP7) Windows Server 2012 R2
+Class Name:      class com.ibm.mq.jms.MQJMSComponent
+CMVC:            p915-L200318.DE
+Jar location:    file:/C:/Program Files/IBM/MQ/java/lib/com.ibm.mq.allclient.jar
+Factory Class:   null
+
+IBM MQ classes for Java
+9.1.5.0
+p915-L200318.DE
+Production
+Component Title: IBM MQ classes for Java
+Component Name:  com.ibm.mq
+Version:         9.1.5.0
+BasedOn:         
+Class Name:      class com.ibm.mq.MQJavaComponent
+CMVC:            p915-L200318.DE
+Jar location:    file:/C:/Program Files/IBM/MQ/java/lib/com.ibm.mq.allclient.jar
+APARs:           
+title:           
+Factory Class:   null
+
+
+
+                                  Stack trace
+                                  -----------
+
+Stack trace to show the location of the FFST call
+|   FFST Location  :-  java.lang.Exception
+|   	at com.ibm.msg.client.commonservices.trace.Trace.getCurrentPosition(Trace.java:2158)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.createFFSTString(Trace.java:2065)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1947)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1804)
+|   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.processExceptionAfterOpen(JmqiOpenInterceptorImpl.java:927)
+|   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.afterOpen(JmqiOpenInterceptorImpl.java:626)
+|   	at com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.afterSpiOpen(JmqiOpenInterceptorImpl.java:214)
+|   	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.spiOpen(InterceptedJmqiImpl.java:562)
+|   	at com.ibm.mq.ese.jmqi.ESEJMQI.spiOpen(ESEJMQI.java:849)
+|   	at com.ibm.mq.MQDestination.open(MQDestination.java:311)
+|   	at com.ibm.mq.MQQueue.<init>(MQQueue.java:240)
+|   	at com.ibm.mq.MQQueue.<init>(MQQueue.java:207)
+|   	at com.ibm.mq.MQQueueManager.accessQueue(MQQueueManager.java:3347)
+|   	at com.ibm.mq.MQQueueManager.accessQueue(MQQueueManager.java:3394)
+|   	at maersk.mq.testharness.mqcontroller.MQController.OpenQueue(MQController.java:246)
+|   	at maersk.mq.testharness.producer.Producer.OpenQueueForWriting(Producer.java:537)
+|   	at maersk.mq.testharness.producer.Producer.producer(Producer.java:418)
+|   	at maersk.mq.testharness.producer.Producer.Process(Producer.java:404)
+|   	at maersk.mq.testharness.producer.Producer.Start(Producer.java:354)
+|   	at maersk.mq.testharness.MessageProcessor.processMessages(MessageProcessor.java:392)
+|   	at maersk.mq.testharness.MessageProcessor.call(MessageProcessor.java:319)
+|   	at maersk.mq.testharness.MessageProcessor.call(MessageProcessor.java:1)
+|   	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+|   	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+|   	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+|   	at java.base/java.lang.Thread.run(Unknown Source)
+|   
+
+                            Property Store Contents
+                            -----------------------
+
+All currently set properties
+|   awt.toolkit                    :-  sun.awt.windows.WToolkit
+|   file.encoding                  :-  Cp1252
+|   file.encoding.pkg              :-  sun.io
+|   file.separator                 :-  \
+|   java.awt.graphicsenv           :-  sun.awt.Win32GraphicsEnvironment
+|   java.awt.printerjob            :-  sun.awt.windows.WPrinterJob
+|   java.class.path                :-  C:\Program Files\IBM\MQ\java\lib\jms.jar;C:\Program Files\IBM\MQ\java\lib\fscontext.jar;C:\Program Files\IBM\MQ\java\lib\bcpkix-jdk15on.jar;C:\Program Files\IBM\MQ\java\lib\bcprov-jdk15on.jar;C:\Program Files\IBM\MQ\java\lib\com.ibm.mq.allclient.jar;C:\Program Files\IBM\MQ\java\lib\com.ibm.mq.headers.jar;C:\Program Files\IBM\MQ\java\lib\com.ibm.mq.jar;C:\Users\mickm\eclipse-workspace\java-mq-test-harness\bin
+|   java.class.version             :-  54.0
+|   java.home                      :-  C:\Program Files\Java\jre-10.0.1
+|   java.io.tmpdir                 :-  C:\Users\mickm\AppData\Local\Temp\
+|   java.library.path              :-  C:\Program Files\Java\jre-10.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\IBM\MQ\java\lib;C:\Program Files\IBM\MQ\java\lib64;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\PuTTY\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Java\apache-maven-3.5.4\bin;C:\Users\mickm\Documents\Development\apache-ant-1.10.5\apache-ant-1.10.5\bin;c:\Program Files\Git\mingw64\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\IBM\MQ\bin64;C:\Program Files\IBM\MQ\bin;C:\Program Files\IBM\MQ\tools\c\samples\bin64;C:\Program Files\IBM\MQ\tools\c\samples\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\mickm\AppData\Local\Microsoft\WindowsApps;;.
+|   java.runtime.name              :-  Java(TM) SE Runtime Environment
+|   java.runtime.version           :-  10.0.1+10
+|   java.specification.name        :-  Java Platform API Specification
+|   java.specification.vendor      :-  Oracle Corporation
+|   java.specification.version     :-  10
+|   java.vendor                    :-  Oracle Corporation
+|   java.vendor.url                :-  http://java.oracle.com/
+|   java.vendor.url.bug            :-  http://bugreport.java.com/bugreport/
+|   java.vendor.version            :-  18.3
+|   java.version                   :-  10.0.1
+|   java.version.date              :-  2018-04-17
+|   java.vm.compressedOopsMode     :-  32-bit
+|   java.vm.info                   :-  mixed mode
+|   java.vm.name                   :-  Java HotSpot(TM) 64-Bit Server VM
+|   java.vm.specification.name     :-  Java Virtual Machine Specification
+|   java.vm.specification.vendor   :-  Oracle Corporation
+|   java.vm.specification.version  :-  10
+|   java.vm.vendor                 :-  "Oracle Corporation"
+|   java.vm.version                :-  10.0.1+10
+|   jdk.debug                      :-  release
+|   line.separator                 :-  
+|   
+|   os.arch                        :-  amd64
+|   os.name                        :-  Windows 10
+|   os.version                     :-  10.0
+|   path.separator                 :-  ;
+|   sun.arch.data.model            :-  64
+|   sun.boot.library.path          :-  C:\Program Files\Java\jre-10.0.1\bin
+|   sun.cpu.endian                 :-  little
+|   sun.cpu.isalist                :-  amd64
+|   sun.desktop                    :-  windows
+|   sun.io.unicode.encoding        :-  UnicodeLittle
+|   sun.java.command               :-  maersk.mq.testharness.TestHarness -v false -m QMAP01 -q LOAD.TEST.Q2 -h localhost -p 1501 -c NOCRED_WITHCHLAUTH -u mickm -w cartacat97 -func producer -log true -msgs 20 -pt 1 -ct 1 -msgsize 0 -csp true
+|   sun.java.launcher              :-  SUN_STANDARD
+|   sun.jnu.encoding               :-  Cp1252
+|   sun.management.compiler        :-  HotSpot 64-Bit Tiered Compilers
+|   sun.os.patch.level             :-  
+|   user.country                   :-  GB
+|   user.dir                       :-  C:\Users\mickm\eclipse-workspace\java-mq-test-harness
+|   user.home                      :-  C:\Users\mickm
+|   user.language                  :-  en
+|   user.name                      :-  mickm
+|   user.script                    :-  
+|   user.timezone                  :-  
+|   user.variant                   :-  
+
+                           WorkQueueMananger Contents
+                           --------------------------
+
+|   Current ThreadPool size      :-  1
+|   Maintain ThreadPool size     :-  false
+|   Maximum ThreadPool size      :-  -1
+|   ThreadPool inactive timeout  :-  0
+
+                               Runtime properties
+                               ------------------
+
+|   Available processors         :-  4
+|   Free memory in bytes (now)   :-  115984512
+|   Max memory in bytes          :-  2128609280
+|   Total memory in bytes (now)  :-  161480704
+
+                           Component Manager Contents
+                           --------------------------
+
+Common Services Components:
+|   CMVC               :-  p915-L200318.DE
+|   Class Name         :-  class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+|   Component Name     :-  com.ibm.msg.client.commonservices.j2se
+|   Component Title    :-  Common Services for Java Platform, Standard Edition
+|   Factory Class      :-  class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+|   Jar location       :-  file:/C:/Program Files/IBM/MQ/java/lib/com.ibm.mq.allclient.jar
+|   Version            :-  9.1.5.0
+|   inPreferenceTo[0]  :-  com.ibm.msg.client.commonservices.j2me
+
+Messaging Provider Components:
+|   CMVC             :-  p915-L200318.DE
+|   Class Name       :-  class com.ibm.msg.client.wmq.factories.WMQComponent
+|   Component Name   :-  com.ibm.msg.client.wmq
+|   Component Title  :-  IBM MQ JMS Provider
+|   Factory Class    :-  class com.ibm.msg.client.wmq.factories.WMQFactoryFactory
+|   Jar location     :-  file:/C:/Program Files/IBM/MQ/java/lib/com.ibm.mq.allclient.jar
+|   Version          :-  9.1.5.0
+|   mqjbnd level     :-  p915-L200318.DE
+
+
+
+
+All Thread Information
+
+                          Name : main
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 1
+                         State : TIMED_WAITING
+                         Stack : jdk.internal.misc.Unsafe.park(null:-2)
+                               : java.util.concurrent.locks.LockSupport.parkNanos(null:-1)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(null:-1)
+                               : java.util.concurrent.ThreadPoolExecutor.awaitTermination(null:-1)
+                               : maersk.mq.testharness.TestHarness.ShutdownAndWaitTerminateion(TestHarness.java:980)
+                               : maersk.mq.testharness.TestHarness.main(TestHarness.java:608)
+
+                          Name : Signal Dispatcher
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 4
+                         State : RUNNABLE
+
+                          Name : JMSCCThreadPoolMaster
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 15
+                         State : WAITING
+                         Stack : java.lang.Object.wait(null:-2)
+                               : java.lang.Object.wait(null:-1)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:672)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:641)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.run(WorkQueueManagerImplementation.java:908)
+
+                          Name : Reference Handler
+                      Priority : 10
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 2
+                         State : RUNNABLE
+                         Stack : java.lang.ref.Reference.waitForReferencePendingList(null:-2)
+                               : java.lang.ref.Reference.processPendingReferences(null:-1)
+                               : java.lang.ref.Reference.access$000(null:-1)
+                               : java.lang.ref.Reference$ReferenceHandler.run(null:-1)
+
+                          Name : RcvThread: com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection@1164970792[qmid=QMAP01_2018-11-18_17.34.30,fap=14,channel=NOCRED_WITHCHLAUTH  ,ccsid=437,sharecnv=10,hbint=300,peer=localhost/127.0.0.1(1501),localport=64076,ssl=no]
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=JMSCCThreadPool,maxpri=10]
+                            ID : 16
+                         State : RUNNABLE
+                         Stack : java.net.SocketInputStream.socketRead0(null:-2)
+                               : java.net.SocketInputStream.socketRead(null:-1)
+                               : java.net.SocketInputStream.read(null:-1)
+                               : java.net.SocketInputStream.read(null:-1)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1887)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:773)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:739)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:155)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:319)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:343)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1227)
+
+                          Name : Attach Listener
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 5
+                         State : RUNNABLE
+
+                          Name : pool-1-thread-1
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 12
+                         State : RUNNABLE
+                         Stack : java.lang.Thread.dumpThreads(null:-2)
+                               : java.lang.Thread.getAllStackTraces(null:-1)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.generateThreadInfo(DefaultTracer.java:1439)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.access$1300(DefaultTracer.java:151)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$10.run(DefaultTracer.java:1379)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$10.run(DefaultTracer.java:1303)
+                               : java.security.AccessController.doPrivileged(null:-2)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.ffst(DefaultTracer.java:1303)
+                               : com.ibm.msg.client.commonservices.j2se.wmqsupport.TracerImpl.ffst(TracerImpl.java:174)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1952)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1804)
+                               : com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.processExceptionAfterOpen(JmqiOpenInterceptorImpl.java:927)
+                               : com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.afterOpen(JmqiOpenInterceptorImpl.java:626)
+                               : com.ibm.mq.ese.intercept.JmqiOpenInterceptorImpl.afterSpiOpen(JmqiOpenInterceptorImpl.java:214)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.spiOpen(InterceptedJmqiImpl.java:562)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.spiOpen(ESEJMQI.java:849)
+                               : com.ibm.mq.MQDestination.open(MQDestination.java:311)
+                               : com.ibm.mq.MQQueue.<init>(MQQueue.java:240)
+                               : com.ibm.mq.MQQueue.<init>(MQQueue.java:207)
+                               : com.ibm.mq.MQQueueManager.accessQueue(MQQueueManager.java:3347)
+                               : com.ibm.mq.MQQueueManager.accessQueue(MQQueueManager.java:3394)
+                               : maersk.mq.testharness.mqcontroller.MQController.OpenQueue(MQController.java:246)
+                               : maersk.mq.testharness.producer.Producer.OpenQueueForWriting(Producer.java:537)
+                               : maersk.mq.testharness.producer.Producer.producer(Producer.java:418)
+                               : maersk.mq.testharness.producer.Producer.Process(Producer.java:404)
+                               : maersk.mq.testharness.producer.Producer.Start(Producer.java:354)
+                               : maersk.mq.testharness.MessageProcessor.processMessages(MessageProcessor.java:392)
+                               : maersk.mq.testharness.MessageProcessor.call(MessageProcessor.java:319)
+                               : maersk.mq.testharness.MessageProcessor.call(MessageProcessor.java:1)
+                               : java.util.concurrent.FutureTask.run(null:-1)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(null:-1)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(null:-1)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : Finalizer
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 3
+                         State : WAITING
+                         Stack : java.lang.Object.wait(null:-2)
+                               : java.lang.ref.ReferenceQueue.remove(null:-1)
+                               : java.lang.ref.ReferenceQueue.remove(null:-1)
+                               : java.lang.ref.Finalizer$FinalizerThread.run(null:-1)
+
+                          Name : Common-Cleaner
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=InnocuousThreadGroup,maxpri=10]
+                            ID : 11
+                         State : TIMED_WAITING
+                         Stack : java.lang.Object.wait(null:-2)
+                               : java.lang.ref.ReferenceQueue.remove(null:-1)
+                               : jdk.internal.ref.CleanerImpl.run(null:-1)
+                               : java.lang.Thread.run(null:-1)
+                               : jdk.internal.misc.InnocuousThread.run(null:-1)
+
+First Failure Symptom Report completed at Wed Aug 19 12:15:54 BST 2020
+------------------------------------END FFST------------------------------------

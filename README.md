@@ -1,1 +1,1 @@
-"# java-mq-test-harness" 
+# java-mq-test-harness 

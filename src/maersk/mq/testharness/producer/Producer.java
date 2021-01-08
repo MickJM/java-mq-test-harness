@@ -628,7 +628,7 @@ public class Producer {
 		boolean segments = false;
 		
 		/*
-		 * Are qe splitting messages (segments)?
+		 * Are we splitting messages (segments)?
 		 */
 		if (SplitMessages()) {
 			if (Msg().length() > SplitMessageSize()) {
