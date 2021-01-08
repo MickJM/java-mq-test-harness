@@ -1,4 +1,4 @@
-package maersk.mq.testharness.mqcontroller;
+package app.mq.testharness.mqcontroller;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

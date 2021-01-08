@@ -1,4 +1,4 @@
-package maersk.mq.testharness;
+package app.mq.testharness;
 
 public interface Constants {
 

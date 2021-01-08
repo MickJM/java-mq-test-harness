@@ -1,4 +1,4 @@
-package maersk.mq.testharness.consumer;
+package app.mq.testharness.consumer;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -17,8 +17,8 @@ import com.ibm.mq.MQQueue;
 import com.ibm.mq.MQQueueManager;
 import com.ibm.mq.constants.MQConstants;
 
-import maersk.mq.testharness.Constants;
-import maersk.mq.testharness.mqcontroller.MQController;
+import app.mq.testharness.Constants;
+import app.mq.testharness.mqcontroller.MQController;
 
 public class Consumer {
 

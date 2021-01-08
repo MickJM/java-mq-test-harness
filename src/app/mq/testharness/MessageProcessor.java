@@ -1,4 +1,4 @@
-package maersk.mq.testharness;
+package app.mq.testharness;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -8,8 +8,8 @@ import java.util.concurrent.Callable;
 import com.ibm.mq.MQException;
 import com.ibm.mq.constants.MQConstants;
 
-import maersk.mq.testharness.consumer.Consumer;
-import maersk.mq.testharness.producer.Producer;
+import app.mq.testharness.consumer.Consumer;
+import app.mq.testharness.producer.Producer;
 
 public class MessageProcessor implements Callable<Integer> {
 

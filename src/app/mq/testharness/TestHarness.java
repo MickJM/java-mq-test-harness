@@ -1,4 +1,4 @@
-package maersk.mq.testharness;
+package app.mq.testharness;
 
 import java.io.File;
 /*
@@ -30,7 +30,7 @@ import javax.management.ReflectionException;
 
 import com.ibm.mq.constants.MQConstants;
 
-import maersk.mq.testharness.Constants;
+import app.mq.testharness.Constants;
 
 public class TestHarness {
 

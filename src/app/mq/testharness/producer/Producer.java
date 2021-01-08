@@ -1,4 +1,4 @@
-package maersk.mq.testharness.producer;
+package app.mq.testharness.producer;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,7 +18,7 @@ import com.ibm.mq.MQQueue;
 import com.ibm.mq.MQQueueManager;
 import com.ibm.mq.constants.MQConstants;
 
-import maersk.mq.testharness.mqcontroller.MQController;
+import app.mq.testharness.mqcontroller.MQController;
 
 public class Producer {
 
